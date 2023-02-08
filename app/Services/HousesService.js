@@ -17,7 +17,7 @@ import { appState } from "../AppState.js"
 class HousesService {
     createHouse(formData) {
         let house = new house(formData)
-        appState.houses.push('houses')
+        appState.houses.push(house)
         appState.emit('houses')
     }
 }

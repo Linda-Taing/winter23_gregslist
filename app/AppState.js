@@ -11,7 +11,28 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/House').House[]} */
   houses = [
-    new House('1234', '1974', 'Mid - Century Modern Single Family Home', 3, 2.5, 1400, 375000, 'Newly renovated mid - century modern home', 'https://rew-feed-images.global.ssl.fastly.net/imls/_cloud_media/property/residentialincome/98862307-1-835976ecc96808a93ea194115ae6c537-m.jpg')]
+    new House({
+      id: 1234,
+      year: 1974,
+      name: 'Mid - Century Modern Single Family Home',
+      bedrooms: 3,
+      bathrooms: 2.5,
+      sqft: 1400,
+      price: 375000,
+      description: 'Newly renovated mid - century modern home',
+      imgUrl: 'https://thiscatdoesnotexist.com'
+    }),
+    new House({
+      id: 1204,
+      year: 1974,
+      name: 'Home',
+      bedrooms: 3,
+      bathrooms: 2.5,
+      sqft: 1400,
+      price: 375000,
+      description: 'Newly renovated mid - century modern home',
+      imgUrl: 'https://thiscatdoesnotexist.com'
+    })]
 
   /** @type {import('./Models/House').House} */
   activeHouse = null

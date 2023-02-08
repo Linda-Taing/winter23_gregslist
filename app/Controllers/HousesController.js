@@ -6,8 +6,15 @@ import { housesService } from "../Services/HousesService.js"
 import { House } from "../Models/House.js"
 
 function _drawHouses() {
+  let template = ''
+  let houses = appState.houses
+  console.log('[HOUSES APPSTATE]', houses)
+  houses.forEach(h => template += h.housesCardTemplate)
+  console.log('house template', template)
+  setHTML('listings', template)
 
 }
+
 function _drawHouse() {
 
 }
@@ -20,7 +27,7 @@ export class HousesController {
     this.show()
     console.log('Hello this is the houses Controller')
     appState.on('houses', _drawHouses)
-    appState.on('house', _drawHouse)
+    appState.on('activeHouse', _drawHouse)
   }
 
   show() {
@@ -48,4 +55,3 @@ export class HousesController {
     }
   }
 }
-_drawHouses()
